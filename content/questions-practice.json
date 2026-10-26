@@ -1,0 +1,692 @@
+[
+  {
+    "id": "p01",
+    "topic": "sampling",
+    "prompt": "The sampling distribution of the sample mean refers to:",
+    "options": [
+      "The distribution of individual observations in the population",
+      "The distribution of sample means from all possible samples of a given size",
+      "The distribution of sample variances from all possible samples",
+      "The distribution of the population mean"
+    ],
+    "answer": 1,
+    "explanation": "A sampling distribution describes a statistic across repeated samples of the SAME size. Here the statistic is the sample mean, not the individual observations.",
+    "wrongReasons": [
+      "That is the population distribution, not the sampling distribution.",
+      "Correct.",
+      "This describes a different statistic: sample variance.",
+      "The population mean is a fixed parameter, not a distribution of repeated sample means."
+    ],
+    "source": "Supplied practice exam, question 1 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 1
+  },
+  {
+    "id": "p02",
+    "topic": "sampling",
+    "prompt": "Suppose a population is skewed (not normally distributed). According to the Central Limit Theorem, the sampling distribution of the sample mean will be approximately normal if:",
+    "options": [
+      "The population standard deviation is known",
+      "The sample size is large (typically n ≥ 30)",
+      "The sample mean is close to the population mean",
+      "The population standard deviation is small"
+    ],
+    "answer": 1,
+    "explanation": "The course uses n ≥ 30 as a large-sample rule of thumb: sample means become approximately normal even when the population is not. Very severe skew or outliers can require larger n; 30 is not a universal guarantee.",
+    "wrongReasons": [
+      "Knowing σ does not determine normality.",
+      "Correct.",
+      "A particular sample mean being close to μ does not establish the distribution’s shape.",
+      "The size of σ does not determine normality."
+    ],
+    "source": "Supplied practice exam, question 2 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 2
+  },
+  {
+    "id": "p03",
+    "topic": "sampling",
+    "prompt": "The standard error of the sample mean is calculated as:",
+    "options": [
+      "σ / √n",
+      "σ × √n",
+      "σ² / n",
+      "σ / n"
+    ],
+    "answer": 0,
+    "explanation": "SE(x̄) = σ/√n when population σ is known. It measures how much sample means vary across repeated samples. With unknown σ, estimate it using s/√n.",
+    "wrongReasons": [
+      "Correct.",
+      "Multiplying by √n would make larger samples less precise.",
+      "σ²/n is the VARIANCE of the sample mean, not its standard error.",
+      "Divide by √n, not n."
+    ],
+    "source": "Supplied practice exam, question 3 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 3
+  },
+  {
+    "id": "p04",
+    "topic": "sampling",
+    "prompt": "As the sample size increases, the standard error of the sample mean:",
+    "options": [
+      "Increases",
+      "Decreases",
+      "Stays the same",
+      "Approaches the population mean"
+    ],
+    "answer": 1,
+    "explanation": "SE = σ/√n. Increasing n increases the denominator, so SE decreases. Quadrupling n halves SE.",
+    "wrongReasons": [
+      "SE decreases as n grows.",
+      "Correct.",
+      "SE depends on sample size.",
+      "SE measures variability; it does not approach the population mean."
+    ],
+    "source": "Supplied practice exam, question 4 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 4
+  },
+  {
+    "id": "p05",
+    "topic": "sampling",
+    "prompt": "A population has a mean of 100 and a standard deviation of 20. For samples of size n = 64, what is the standard error of the sample mean?",
+    "options": [
+      "20",
+      "5",
+      "2.5",
+      "0.3125"
+    ],
+    "answer": 2,
+    "explanation": "SE = 20/√64 = 20/8 = 2.5. The population mean 100 is not needed for this calculation.",
+    "wrongReasons": [
+      "20 is the standard deviation of individual observations.",
+      "√64 = 8, so 20/8 = 2.5, not 5.",
+      "Correct.",
+      "20/64 divides by n instead of √n."
+    ],
+    "source": "Supplied practice exam, question 5 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 5
+  },
+  {
+    "id": "p06",
+    "topic": "sampling",
+    "prompt": "The commute time of students is a numeric variable in a large population with a mean of 30 minutes and a standard deviation of 12 minutes. A random sample of n = 36 students will be selected. Which Excel formula gives the probability that the sample mean is greater than 33 minutes?",
+    "options": [
+      "=1-NORM.DIST(33,30,12,1)",
+      "=NORM.DIST(33,30,12/SQRT(36),1)",
+      "=1-NORM.DIST(33,30,12/SQRT(36),1)",
+      "=1-NORM.DIST(33,30,12/36,1)"
+    ],
+    "answer": 2,
+    "explanation": "For a sample mean use mean μ = 30 and SE = 12/√36 = 2. P(x̄ > 33) is the RIGHT tail: 1 − NORM.DIST(33,30,2,TRUE). Its z score is 1.5; the probability is about 0.0668. In these formulas 1 means TRUE (cumulative probability).",
+    "wrongReasons": [
+      "Uses the individual-observation SD 12 instead of the SE 2.",
+      "Computes P(x̄ ≤ 33), the opposite tail.",
+      "Correct.",
+      "Uses 12/36, but the SE divides by √36."
+    ],
+    "source": "Supplied practice exam, question 6 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 6
+  },
+  {
+    "id": "p07",
+    "topic": "sampling",
+    "prompt": "Which of the following statements about the sampling distribution of the sample mean is TRUE?",
+    "options": [
+      "Its mean equals the population mean",
+      "Its standard deviation equals the population standard deviation",
+      "Its shape is always normal regardless of sample size",
+      "Its variance equals the population variance"
+    ],
+    "answer": 0,
+    "explanation": "The sampling distribution of x̄ is centered at μ: E(x̄) = μ. Its SD is σ/√n, and its shape is exactly normal for a normal population or approximately normal when a suitable CLT applies.",
+    "wrongReasons": [
+      "Correct.",
+      "Its SD is σ/√n, usually smaller than σ.",
+      "For small n from a nonnormal population, it need not be normal.",
+      "Its variance is σ²/n, not σ²."
+    ],
+    "source": "Supplied practice exam, question 7 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 7
+  },
+  {
+    "id": "p08",
+    "topic": "mean-ci",
+    "prompt": "A 95% confidence interval for a population mean is (42, 58). Which interpretation is correct?",
+    "options": [
+      "There is a 95% probability that the population mean is between 42 and 58",
+      "95% of all possible samples would produce intervals containing the true population mean",
+      "95% of the data falls between 42 and 58",
+      "The sample mean has a 95% chance of falling between 42 and 58"
+    ],
+    "answer": 1,
+    "explanation": "A 95% confidence PROCEDURE produces intervals containing the fixed population mean in about 95% of repeated samples. For the realized interval, μ is fixed and the interval either covers it or does not. The conventional contextual wording is “we are 95% confident that μ is between 42 and 58.”",
+    "wrongReasons": [
+      "The frequentist interpretation does not assign 95% probability to the fixed μ after computing this interval.",
+      "Correct.",
+      "A CI estimates a population parameter, not the range containing 95% of individual data.",
+      "The sample mean is already known once this interval is computed."
+    ],
+    "source": "Supplied practice exam, question 8 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 8
+  },
+  {
+    "id": "p09",
+    "topic": "mean-ci",
+    "prompt": "A sample of 49 products has a mean weight of 15.2 ounces. The population standard deviation is 1.4 ounces. What is the 95% confidence interval for the true mean weight?",
+    "options": [
+      "(14.81, 15.59)",
+      "(14.90, 15.50)",
+      "(14.95, 15.45)",
+      "(14.70, 15.70)"
+    ],
+    "answer": 0,
+    "explanation": "σ is known, so use z*: SE = 1.4/√49 = 0.2. ME = 1.96(0.2) = 0.392. CI = 15.2 ± 0.392 = (14.808,15.592), rounded to (14.81,15.59).",
+    "wrongReasons": [
+      "Correct.",
+      "This margin is too small for the given 95% z* and SE.",
+      "This margin is too small; use 1.96 × 0.2.",
+      "This margin is too large; use 1.96 × 0.2."
+    ],
+    "source": "Supplied practice exam, question 9 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 9
+  },
+  {
+    "id": "p10",
+    "topic": "proportion-ci",
+    "prompt": "A survey of 400 customers finds that 160 prefer a new product. What is the 90% confidence interval for the true proportion?",
+    "options": [
+      "(0.360, 0.440)",
+      "(0.365, 0.435)",
+      "(0.370, 0.430)",
+      "(0.355, 0.445)"
+    ],
+    "answer": 0,
+    "explanation": "p̂ = 160/400 = 0.40. SE = √[0.4(0.6)/400] ≈ 0.02449. For 90%, z* = 1.645, so ME ≈ 0.04029. CI ≈ (0.3597,0.4403) → (0.360,0.440).",
+    "wrongReasons": [
+      "Correct.",
+      "This margin is too small for 1.645 × 0.02449.",
+      "This margin is too small; retain enough precision until the final rounding.",
+      "This margin is too large for the specified confidence level."
+    ],
+    "source": "Supplied practice exam, question 10 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 10
+  },
+  {
+    "id": "p11",
+    "topic": "mean-ci",
+    "prompt": "A 99% confidence interval will be _________ than a 95% confidence interval for the same data.",
+    "options": [
+      "Narrower",
+      "Wider",
+      "The same width",
+      "Unrelated in width"
+    ],
+    "answer": 1,
+    "explanation": "Higher confidence requires a larger multiplier: z* is 2.576 for 99% versus 1.960 for 95%. With the same data and SE, a larger multiplier gives a wider interval.",
+    "wrongReasons": [
+      "Narrower intervals provide less coverage for fixed data.",
+      "Correct.",
+      "The multiplier changes with confidence level.",
+      "Confidence level directly affects interval width."
+    ],
+    "source": "Supplied practice exam, question 11 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 11
+  },
+  {
+    "id": "p12",
+    "topic": "mean-ci",
+    "prompt": "A sample of 25 students has a mean GPA of 3.2 with a sample standard deviation of 0.4. For a 95% confidence interval, the t critical value with 24 degrees of freedom is 2.064. What is the 95% confidence interval for the true mean GPA?",
+    "options": [
+      "(3.167, 3.233)",
+      "(3.043, 3.357)",
+      "(3.035, 3.365)",
+      "(2.374, 4.026)"
+    ],
+    "answer": 2,
+    "explanation": "σ is unknown: use t with df = 25 − 1 = 24. SE = 0.4/√25 = 0.08. ME = 2.064(0.08) = 0.16512. CI = 3.2 ± 0.16512 = (3.03488,3.36512) → (3.035,3.365).",
+    "wrongReasons": [
+      "This uses 0.4/25 rather than 0.4/√25.",
+      "This is approximately the z interval, but σ is unknown and the supplied t* is required.",
+      "Correct.",
+      "This is too wide because it fails to divide the SD by √n."
+    ],
+    "source": "Supplied practice exam, question 12 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 12
+  },
+  {
+    "id": "p13",
+    "topic": "mean-ci",
+    "prompt": "The margin of error for a confidence interval for a population mean (σ known) is affected by:",
+    "options": [
+      "Sample size",
+      "Confidence level",
+      "Population standard deviation",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explanation": "ME = z*σ/√n. Sample size changes the denominator; confidence level changes z*; population SD changes the numerator. All three affect the margin of error.",
+    "wrongReasons": [
+      "Sample size matters, but it is not the only factor.",
+      "Confidence level matters, but it is not the only factor.",
+      "Population SD matters, but it is not the only factor.",
+      "Correct."
+    ],
+    "source": "Supplied practice exam, question 13 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 13
+  },
+  {
+    "id": "p14",
+    "topic": "mean-ci",
+    "prompt": "A sample of 20 delivery trips (a numeric variable: minutes per trip) will be used to build a 90% confidence interval for the mean trip time. The population standard deviation is unknown. Which Excel formula returns the t critical value for this interval?",
+    "options": [
+      "=T.INV.2T(0.10,20)",
+      "=T.INV.2T(0.05,19)",
+      "=T.INV.2T(0.10,19)",
+      "=NORM.S.INV(0.95)"
+    ],
+    "answer": 2,
+    "explanation": "A 90% two-sided CI has α = 0.10 and df = n − 1 = 19. T.INV.2T takes the TOTAL probability across both tails: =T.INV.2T(0.10,19). Equivalent: =T.INV(0.95,19).",
+    "wrongReasons": [
+      "The df must be 19, not 20.",
+      "A total tail area of 0.05 gives a 95% CI, not a 90% CI.",
+      "Correct.",
+      "Use t, not z, when population σ is unknown."
+    ],
+    "source": "Supplied practice exam, question 14 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 14
+  },
+  {
+    "id": "p15",
+    "topic": "testing",
+    "prompt": "In hypothesis testing, the null hypothesis (H₀) typically represents:",
+    "options": [
+      "The researcher's claim",
+      "No effect or no difference",
+      "A significant effect",
+      "The alternative explanation"
+    ],
+    "answer": 1,
+    "explanation": "H₀ usually expresses a baseline of no effect or no difference, including equality at the test boundary. Hₐ expresses the directional or nondirectional effect you seek evidence for.",
+    "wrongReasons": [
+      "A researcher’s claim can belong to H₀ or Hₐ depending on its wording.",
+      "Correct.",
+      "An effect is usually represented by Hₐ, not H₀.",
+      "The alternative explanation is Hₐ."
+    ],
+    "source": "Supplied practice exam, question 15 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 15
+  },
+  {
+    "id": "p16",
+    "topic": "testing",
+    "prompt": "A Type I error occurs when:",
+    "options": [
+      "We reject H₀ when it is true",
+      "We fail to reject H₀ when it is false",
+      "We reject H₀ when it is false",
+      "We fail to reject H₀ when it is true"
+    ],
+    "answer": 0,
+    "explanation": "Type I = reject a TRUE H₀ (false alarm). Type II = fail to reject a FALSE H₀ (miss). The significance level α controls the nominal Type I error rate.",
+    "wrongReasons": [
+      "Correct.",
+      "That is a Type II error.",
+      "This is a correct detection, not an error.",
+      "This is a correct nonrejection, not an error."
+    ],
+    "source": "Supplied practice exam, question 16 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 16
+  },
+  {
+    "id": "p17",
+    "topic": "testing",
+    "prompt": "A manager tests H₀: μ ≤ 80 versus Hₐ: μ > 80 for the mean order value (a numeric variable) using a random sample of 25 orders. The one-sample t test statistic is 2.10. Which Excel formula returns the p-value?",
+    "options": [
+      "=T.DIST(2.10,24,1)",
+      "=1-T.DIST(2.10,24,1)",
+      "=1-T.DIST(2.10,25,1)",
+      "=2*(1-T.DIST(2.10,24,1))"
+    ],
+    "answer": 1,
+    "explanation": "Hₐ: μ > 80 makes this a right-tailed t test. df = 25 − 1 = 24. The p-value is P(T₂₄ ≥ 2.10) = 1 − T.DIST(2.10,24,TRUE), about 0.0232.",
+    "wrongReasons": [
+      "This gives the left-tail probability, not the right-tail p-value.",
+      "Correct.",
+      "Uses n rather than n − 1 for df.",
+      "Doubles the tail for a one-sided test."
+    ],
+    "source": "Supplied practice exam, question 17 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 17
+  },
+  {
+    "id": "p18",
+    "topic": "testing",
+    "prompt": "A hypothesis test yields a p-value of 0.032. At α = 0.05, the correct decision is to:",
+    "options": [
+      "Reject H₀",
+      "Fail to reject H₀",
+      "Accept H₀",
+      "Increase the sample size"
+    ],
+    "answer": 0,
+    "explanation": "Compare p to α: 0.032 < 0.05, so reject H₀. This is evidence for Hₐ at the 5% level; it does not prove Hₐ or give the probability that H₀ is true.",
+    "wrongReasons": [
+      "Correct.",
+      "Because p ≤ α, the rule is to reject H₀.",
+      "Tests do not establish that H₀ is true; here it is rejected anyway.",
+      "A decision can already be made at the specified α."
+    ],
+    "source": "Supplied practice exam, question 18 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 18
+  },
+  {
+    "id": "p19",
+    "topic": "testing",
+    "prompt": "A manufacturer claims that their batteries last at least 50 hours. To test this claim, what should the alternative hypothesis be?",
+    "options": [
+      "Hₐ: μ > 50",
+      "Hₐ: μ < 50",
+      "Hₐ: μ = 50",
+      "Hₐ: μ ≠ 50"
+    ],
+    "answer": 1,
+    "explanation": "To challenge the manufacturer’s claim “at least 50,” look for evidence of mean lifetime BELOW 50: Hₐ: μ < 50, with H₀: μ ≥ 50. Calculations use the boundary value μ₀ = 50.",
+    "wrongReasons": [
+      "A right-tailed test looks for lifetimes above 50, not evidence against “at least 50.”",
+      "Correct.",
+      "Equality belongs in H₀, not Hₐ.",
+      "A two-sided test is not the focused challenge to the “at least” claim."
+    ],
+    "source": "Supplied practice exam, question 19 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 19
+  },
+  {
+    "id": "p20",
+    "topic": "testing",
+    "prompt": "A sample of 36 employees has a mean commute time of 28 minutes. The population mean is 25 minutes and the population standard deviation is 6 minutes. What is the z-test statistic?",
+    "options": [
+      "0.50",
+      "1.00",
+      "2.00",
+      "3.00"
+    ],
+    "answer": 3,
+    "explanation": "z = (x̄ − μ₀)/(σ/√n) = (28 − 25)/(6/√36) = 3/1 = 3.00. Treat 25 as the hypothesized population mean.",
+    "wrongReasons": [
+      "0.50 uses the SD 6 instead of the SE 1.",
+      "1 is the SE, not the z statistic.",
+      "Compute the numerator 3 divided by SE 1.",
+      "Correct."
+    ],
+    "source": "Supplied practice exam, question 20 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 20
+  },
+  {
+    "id": "p21",
+    "topic": "testing",
+    "prompt": "A sample of 16 products has a mean weight of 18.5 ounces with a sample standard deviation of 2.0 ounces. What is the t-test statistic for testing H₀: μ ≤ 18 versus Hₐ: μ > 18?",
+    "options": [
+      "1.00",
+      "2.00",
+      "2.50",
+      "3.00"
+    ],
+    "answer": 0,
+    "explanation": "t = (x̄ − μ₀)/(s/√n) = (18.5 − 18)/(2/√16) = 0.5/0.5 = 1.00, with df = 15.",
+    "wrongReasons": [
+      "Correct.",
+      "The SE is 0.5 and the numerator is also 0.5.",
+      "Compute the sample mean minus the null mean, then divide by SE.",
+      "The statistic is 0.5/0.5, not 3."
+    ],
+    "source": "Supplied practice exam, question 21 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 21
+  },
+  {
+    "id": "p22",
+    "topic": "testing",
+    "prompt": "A hypothesis test for a population proportion (a categorical variable with success/failure outcomes) yields a z test statistic of −1.75. Which Excel formula returns the p-value for a two-tailed test?",
+    "options": [
+      "=1-NORM.S.DIST(1.75,1)",
+      "=2*(1-NORM.S.DIST(1.75,1))",
+      "=2*(1-NORM.S.DIST(-1.75,1))",
+      "=NORM.S.DIST(1.75,1)"
+    ],
+    "answer": 1,
+    "explanation": "For a symmetric z distribution, the two-tailed p-value is 2P(Z ≥ |z|). With z = −1.75, use 2[1 − Φ(1.75)] ≈ 0.0801. Equivalent: 2Φ(−1.75).",
+    "wrongReasons": [
+      "This is only one of the two tails.",
+      "Correct.",
+      "This doubles the LARGE tail and yields a number greater than 1.",
+      "This is the large cumulative probability at +1.75, not a two-tailed p-value."
+    ],
+    "source": "Supplied practice exam, question 22 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 22
+  },
+  {
+    "id": "p23",
+    "topic": "chi-square",
+    "prompt": "A chi-square goodness-of-fit test is used to:",
+    "options": [
+      "Test for independence between two categorical variables",
+      "Test whether a sample distribution matches an expected distribution",
+      "Compare two population means",
+      "Compare two population proportions"
+    ],
+    "answer": 1,
+    "explanation": "Goodness of fit compares observed counts for ONE categorical variable to specified expected proportions. Independence asks whether TWO categorical variables are associated.",
+    "wrongReasons": [
+      "That describes a chi-square independence test.",
+      "Correct.",
+      "Comparing numeric means calls for mean-based methods, not goodness of fit.",
+      "Two-proportion inference compares binary success rates across groups."
+    ],
+    "source": "Supplied practice exam, question 23 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 23
+  },
+  {
+    "id": "p24",
+    "topic": "chi-square",
+    "prompt": "A researcher records which of 5 brands (a categorical variable) each of 200 consumers prefers and tests whether the brands are equally preferred, using α = 0.05. Which Excel formula returns the critical value for this test?",
+    "options": [
+      "=CHISQ.INV.RT(0.05,5)",
+      "=CHISQ.INV.RT(0.05,4)",
+      "=CHISQ.INV(0.05,4)",
+      "=CHISQ.DIST.RT(0.05,4)"
+    ],
+    "answer": 1,
+    "explanation": "With k = 5 categories and fully specified equal probabilities, goodness-of-fit df = k − 1 = 4. Chi-square rejection is always in the right tail, so the critical value is CHISQ.INV.RT(0.05,4) ≈ 9.488.",
+    "wrongReasons": [
+      "GOF df is 5 − 1, not 5.",
+      "Correct.",
+      "CHISQ.INV uses left-tail probability; 0.05 is not the desired left-tail area.",
+      "CHISQ.DIST.RT returns a probability, not the critical statistic."
+    ],
+    "source": "Supplied practice exam, question 24 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 24
+  },
+  {
+    "id": "p25",
+    "topic": "chi-square",
+    "prompt": "A die is rolled 180 times to test if it is fair. The expected frequency for each face is:",
+    "options": [
+      "15",
+      "20",
+      "25",
+      "30"
+    ],
+    "answer": 3,
+    "explanation": "A fair die assigns probability 1/6 to each of 6 faces. Expected count = n × probability = 180/6 = 30 per face.",
+    "wrongReasons": [
+      "There are 6 equally likely faces, not 12.",
+      "There are 6 equally likely faces, so divide 180 by 6.",
+      "Expected counts must sum to 180; 6 × 25 does not.",
+      "Correct."
+    ],
+    "source": "Supplied practice exam, question 25 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 25
+  },
+  {
+    "id": "p26",
+    "topic": "chi-square",
+    "prompt": "In a chi-square test of independence with a 3 × 4 contingency table, the degrees of freedom are:",
+    "options": [
+      "12",
+      "6",
+      "8",
+      "10"
+    ],
+    "answer": 1,
+    "explanation": "For independence, df = (r − 1)(c − 1) = (3 − 1)(4 − 1) = 2 × 3 = 6. Do not count row/column totals as categories.",
+    "wrongReasons": [
+      "12 is the number of cells, not the degrees of freedom.",
+      "Correct.",
+      "Subtract one from both r and c before multiplying.",
+      "Subtract one from both r and c before multiplying."
+    ],
+    "source": "Supplied practice exam, question 26 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 26
+  },
+  {
+    "id": "p27",
+    "topic": "chi-square",
+    "prompt": "If the row total is 120, the column total is 80, and the grand total is 400, the expected frequency for that cell is:",
+    "options": [
+      "20",
+      "24",
+      "30",
+      "36"
+    ],
+    "answer": 1,
+    "explanation": "Under independence, E = (row total × column total)/grand total = (120 × 80)/400 = 24. Expected counts may be fractional; do not round prematurely.",
+    "wrongReasons": [
+      "Use both marginal totals divided by the grand total.",
+      "Correct.",
+      "120 × 80/400 equals 24, not 30.",
+      "120 × 80/400 equals 24, not 36."
+    ],
+    "source": "Supplied practice exam, question 27 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 27
+  },
+  {
+    "id": "p28",
+    "topic": "chi-square",
+    "prompt": "A chi-square test yields χ² = 9.5 with df = 4. The critical value at α = 0.05 is 9.488. What is the correct decision?",
+    "options": [
+      "Reject H₀",
+      "Fail to reject H₀",
+      "The test is inconclusive",
+      "Need more information"
+    ],
+    "answer": 0,
+    "explanation": "χ² tests reject in the right tail. Since 9.5 > 9.488, reject H₀ at α = 0.05. The closeness does not change the rule; use the supplied precision.",
+    "wrongReasons": [
+      "Correct.",
+      "The statistic exceeds the right-tail cutoff, so reject.",
+      "The cutoff and statistic provide enough information for the decision.",
+      "No additional information is needed for this comparison."
+    ],
+    "source": "Supplied practice exam, question 28 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 28
+  },
+  {
+    "id": "p29",
+    "topic": "chi-square",
+    "prompt": "Which of the following is an assumption of chi-square tests?",
+    "options": [
+      "Expected frequencies should be at least 5 in all cells",
+      "The data must be normally distributed",
+      "Sample sizes must be equal across categories",
+      "The variables must be continuous"
+    ],
+    "answer": 0,
+    "explanation": "Use the course condition: expected frequencies at least 5 in every cell, along with random/independent observations and categorical count data. This condition is about EXPECTED counts, not observed counts.",
+    "wrongReasons": [
+      "Correct.",
+      "Chi-square tests do not require normally distributed measurements.",
+      "Categories do not need equal observed sample sizes.",
+      "These tests work with categorical counts, not continuous measurements directly."
+    ],
+    "source": "Supplied practice exam, question 29 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 29
+  },
+  {
+    "id": "p30",
+    "topic": "chi-square",
+    "prompt": "A researcher wants to test whether there is an association between gender (male, female) and brand preference (Brand A, Brand B, Brand C). Which test should be used?",
+    "options": [
+      "Chi-square goodness-of-fit test",
+      "Chi-square test of independence",
+      "Two-sample t-test",
+      "One-sample z-test for a proportion"
+    ],
+    "answer": 1,
+    "explanation": "There are TWO categorical variables: gender and brand preference. To test association, use chi-square independence on the 2 × 3 count table. H₀: the variables are independent; Hₐ: they are associated.",
+    "wrongReasons": [
+      "GOF applies to one categorical variable and a specified distribution.",
+      "Correct.",
+      "A t test compares numeric means; brand preference is categorical.",
+      "A one-proportion z test does not analyze a 2 × 3 association table."
+    ],
+    "source": "Supplied practice exam, question 30 (worked answer; no official answer key supplied)",
+    "difficulty": "core",
+    "kind": "practice",
+    "practiceNumber": 30
+  }
+]

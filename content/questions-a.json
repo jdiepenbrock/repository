@@ -1,0 +1,574 @@
+[
+  {
+    "id": "a01",
+    "topic": "sampling",
+    "prompt": "A researcher repeatedly takes random samples of 40 customers and records each sample’s average spending. What distribution is formed by these averages?",
+    "options": [
+      "The sampling distribution of the sample mean",
+      "The distribution of individual customer spending",
+      "The distribution of population means",
+      "The distribution of the sample sizes"
+    ],
+    "answer": 0,
+    "explanation": "The observations in a sampling distribution are statistics from repeated samples of the same size. Here the statistic is the sample mean, not an individual purchase.",
+    "wrongReasons": [
+      "Correct.",
+      "Individual spending is the population or raw-data distribution; these observations are averages.",
+      "The population mean is a fixed parameter here, not a different mean for each random sample.",
+      "Every sample has size 40, so the recorded values are not sample sizes."
+    ],
+    "source": "Module2_Inference_Sampling Distribution, slides 2–3",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a02",
+    "topic": "sampling",
+    "prompt": "A population has mean 55 and standard deviation 18. Random samples of size 36 are drawn independently. What is the mean of the sampling distribution of the sample mean?",
+    "options": [
+      "18",
+      "55",
+      "3",
+      "55/36"
+    ],
+    "answer": 1,
+    "explanation": "E(x̄) = μ = 55. Averaging reduces the spread of sample means, but it does not move their center away from the population mean.",
+    "wrongReasons": [
+      "18 is the population standard deviation, not the mean.",
+      "Correct.",
+      "18/√36 = 3 is the standard error, not the expected sample mean.",
+      "You divide σ by √n to find SE; you do not divide μ by n."
+    ],
+    "source": "Module2_Inference_Sampling Distribution, slide 14",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a03",
+    "topic": "sampling",
+    "prompt": "The population standard deviation of delivery times is 24 minutes. For random samples of n = 64 deliveries, what is the standard error of the sample mean?",
+    "options": [
+      "24 minutes",
+      "0.375 minutes",
+      "3 minutes",
+      "9 minutes"
+    ],
+    "answer": 2,
+    "explanation": "SE(x̄) = σ/√n = 24/√64 = 24/8 = 3 minutes. This describes the variability of sample averages.",
+    "wrongReasons": [
+      "24 is the spread of individual deliveries, before accounting for averaging.",
+      "0.375 divides by n rather than √n.",
+      "Correct.",
+      "9 is SE squared (the variance of x̄), with squared units."
+    ],
+    "source": "Module2_Inference_Sampling Distribution, slides 10 and 14",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a04",
+    "topic": "sampling",
+    "prompt": "For the same population, sample size increases from 36 to 144. What happens to the standard error of the sample mean?",
+    "options": [
+      "It becomes four times as large.",
+      "It becomes one quarter as large.",
+      "It remains unchanged.",
+      "It becomes one half as large."
+    ],
+    "answer": 3,
+    "explanation": "SE is proportional to 1/√n. The new SE divided by the old SE is √(36/144) = 1/2. Quadrupling sample size halves SE.",
+    "wrongReasons": [
+      "Increasing sample size reduces SE rather than increasing it.",
+      "SE involves √n, so quadrupling n does not divide SE by four.",
+      "SE depends on sample size as well as population spread.",
+      "Correct."
+    ],
+    "source": "Module2_Inference_Sampling Distribution, slides 9 and 14",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a05",
+    "topic": "sampling",
+    "prompt": "Individual package weights are normally distributed. A random sample of 9 independent package weights is selected. What can you say about the distribution of its sample mean?",
+    "options": [
+      "It is normal, even though n is less than 30.",
+      "It cannot be normal until n is at least 30.",
+      "It has the same standard deviation as an individual package weight.",
+      "It has mean μ/9."
+    ],
+    "answer": 0,
+    "explanation": "An average of independent normal observations is normal at any sample size. The large-sample CLT is needed to justify approximate normality when the population itself is not normal. The mean remains μ and the SE is σ/3.",
+    "wrongReasons": [
+      "Correct.",
+      "The n ≈ 30 guideline concerns approximation for nonnormal populations; a normal population already gives a normal sample mean.",
+      "The SE is σ/√9 = σ/3, smaller than σ.",
+      "The expected sample mean is μ, not μ/n."
+    ],
+    "source": "Module2_Inference_Sampling Distribution, slides 13–14; Module2_CI_Sigma Known and Unknown, slide 4",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a06",
+    "topic": "sampling",
+    "prompt": "Commute times have population mean 40 minutes and standard deviation 15 minutes. For a random sample of 25 independent commuters, assume the sample mean is normally distributed. Which Excel expression gives P(x̄ > 46)?",
+    "options": [
+      "=1-NORM.DIST(46,40,15,TRUE)",
+      "=1-NORM.DIST(46,40,15/SQRT(25),TRUE)",
+      "=NORM.DIST(46,40,15/SQRT(25),TRUE)",
+      "=1-NORM.DIST(46,40,15/25,TRUE)"
+    ],
+    "answer": 1,
+    "explanation": "Use the sampling-distribution SE, 15/√25 = 3, and subtract the left-tail CDF from 1 for a right-tail probability. z = (46−40)/3 = 2, so the probability is approximately 0.0228.",
+    "wrongReasons": [
+      "This uses individual-observation SD = 15 rather than the SE of the average.",
+      "Correct.",
+      "NORM.DIST with TRUE is the probability below 46; the question asks above 46.",
+      "This divides by n instead of √n."
+    ],
+    "source": "Module2_Inference_Sampling Distribution, slides 10 and 14; Practice Exam 2, question 6",
+    "difficulty": "stretch",
+    "kind": "original"
+  },
+  {
+    "id": "a07",
+    "topic": "sampling",
+    "prompt": "A population is extremely right-skewed with rare, very large observations. Which statement best describes the CLT when n = 30?",
+    "options": [
+      "It makes the original population normal.",
+      "It guarantees the sample data are normal.",
+      "It supports approximate normality of sample means as n grows, but n = 30 is not a universal guarantee.",
+      "It guarantees every sample mean equals μ."
+    ],
+    "answer": 2,
+    "explanation": "The CLT concerns the distribution of sample averages across repeated samples, not the original observations. The course uses n ≈ 30 as a rule of thumb; severe skew or heavy tails may require larger samples. Standard CLT reasoning also assumes suitable independence and finite variance.",
+    "wrongReasons": [
+      "The population shape does not change when you take a larger sample.",
+      "Raw sample observations do not become normal just because their average may be approximately normal.",
+      "Correct.",
+      "Individual sample means still vary around μ."
+    ],
+    "source": "Module2_Inference_Sampling Distribution, slides 13–14 (n ≈ 30 is a course rule of thumb)",
+    "difficulty": "stretch",
+    "kind": "original"
+  },
+  {
+    "id": "a08",
+    "topic": "mean-ci",
+    "prompt": "For a population mean with known population standard deviation σ, which formula is the usual two-sided confidence interval?",
+    "options": [
+      "x̄ ± z*σ/n",
+      "μ ± z*σ/√n",
+      "x̄ ± z*σ²/n",
+      "x̄ ± z*σ/√n"
+    ],
+    "answer": 3,
+    "explanation": "A confidence interval is point estimate ± critical value × standard error. The point estimate is x̄ and, when σ is known, SE = σ/√n.",
+    "wrongReasons": [
+      "The denominator should be √n, not n.",
+      "The unknown parameter μ is what you are estimating, so it cannot be the observed center of the interval.",
+      "σ²/n is a variance rather than a standard error.",
+      "Correct."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slides 2 and 7",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a09",
+    "topic": "mean-ci",
+    "prompt": "A random sample of 36 purchases has mean $82. The population standard deviation is known to be $12. Using z* = 1.96, what is the 95% confidence interval for the population mean?",
+    "options": [
+      "($78.08, $85.92)",
+      "($80.04, $83.96)",
+      "($58.48, $105.52)",
+      "($81.35, $82.65)"
+    ],
+    "answer": 0,
+    "explanation": "SE = 12/√36 = 2. Margin of error = 1.96×2 = 3.92. Therefore the interval is 82 ± 3.92 = ($78.08, $85.92).",
+    "wrongReasons": [
+      "Correct.",
+      "This uses a margin of 1.96 instead of multiplying by the SE of 2.",
+      "This uses σ = 12 directly and ignores division by √n.",
+      "This divides σ by n rather than √n, giving an interval that is too narrow."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slide 7",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a10",
+    "topic": "mean-ci",
+    "prompt": "A random sample of 16 observations from a normal population has mean 12.5 and sample standard deviation 3.0. Population σ is unknown. The 95% t critical value with df = 15 is 2.131. What is the 95% confidence interval for μ?",
+    "options": [
+      "(12.10, 12.90)",
+      "(10.90, 14.10)",
+      "(11.03, 13.97)",
+      "(6.11, 18.89)"
+    ],
+    "answer": 1,
+    "explanation": "Estimated SE = s/√n = 3/4 = 0.75. Margin of error = 2.131×0.75 = 1.59825. Thus the interval is approximately (10.90, 14.10). Use t because σ is unknown.",
+    "wrongReasons": [
+      "This uses s/n instead of s/√n.",
+      "Correct.",
+      "This uses z* = 1.96 instead of the supplied t critical value.",
+      "This multiplies t* by s without dividing by √n."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slides 8–10",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a11",
+    "topic": "mean-ci",
+    "prompt": "A sample of 50 employees will be used to estimate mean weekly hours. The population standard deviation is unknown; only the sample standard deviation is available. Which method is appropriate?",
+    "options": [
+      "A z interval because n exceeds 30, regardless of whether σ is known",
+      "A chi-square test of independence",
+      "A t interval with df = 49, assuming its sampling conditions hold",
+      "A t interval with df = 50"
+    ],
+    "answer": 2,
+    "explanation": "When population σ is unknown and s estimates it, the usual mean interval uses t with n−1 degrees of freedom. For large n, t approaches z, but an unknown σ does not become known merely because n ≥ 30.",
+    "wrongReasons": [
+      "Large sample size helps normal approximation; it does not make population σ known.",
+      "Chi-square independence concerns two categorical variables, not estimation of a numeric mean.",
+      "Correct.",
+      "For a one-sample t interval, df = n−1 = 49."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slides 8–10",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a12",
+    "topic": "mean-ci",
+    "prompt": "A 95% confidence interval for a population mean is (18, 24). Which interpretation is correct?",
+    "options": [
+      "95% of individual population values lie between 18 and 24.",
+      "The fixed population mean changes between 18 and 24 in 95% of samples.",
+      "There is a 95% chance that the sample mean is between 18 and 24.",
+      "In repeated sampling, about 95% of intervals made by this method would contain the true mean."
+    ],
+    "answer": 3,
+    "explanation": "The 95% refers to the long-run coverage rate of the interval-producing method. Samples and intervals vary; the population mean is fixed. A mean CI is not a statement about 95% of individual observations.",
+    "wrongReasons": [
+      "A confidence interval for a mean is not a prediction interval for individual values.",
+      "The parameter stays fixed; the intervals vary across samples.",
+      "The observed sample mean is already known and is the interval’s center.",
+      "Correct."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slide 5; Module2_Confidence Intervals for Proportions, slides 3–4",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a13",
+    "topic": "mean-ci",
+    "prompt": "Keeping the same data and the same estimation method, what happens when confidence increases from 90% to 99%?",
+    "options": [
+      "The interval becomes wider.",
+      "The interval becomes narrower.",
+      "The interval’s center must increase.",
+      "The standard error decreases."
+    ],
+    "answer": 0,
+    "explanation": "Greater confidence requires a larger critical multiplier, so the margin of error and total width increase. For a z interval, z* rises from 1.645 to 2.576; the data, center, and SE remain unchanged.",
+    "wrongReasons": [
+      "Correct.",
+      "A narrower interval covers fewer possible parameter values, not a higher confidence level for the same data.",
+      "Changing the confidence level changes the multiplier, not the sample mean.",
+      "SE depends on the sample size and spread, not the chosen confidence level."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slide 7; Module2_Confidence Intervals for Proportions, slide 8",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a14",
+    "topic": "mean-ci",
+    "prompt": "A researcher needs a 95% confidence interval for a mean with margin of error at most 1.5. Population σ is known to be 8. Using z* = 1.96, what is the minimum whole-number sample size?",
+    "options": [
+      "109",
+      "110",
+      "11",
+      "55"
+    ],
+    "answer": 1,
+    "explanation": "Start with E = z*σ/√n. Rearranging gives n ≥ (z*σ/E)² = (1.96×8/1.5)² = 109.2722. Always round up to meet the target, so n = 110. At n = 109 the margin is about 1.5019, slightly too large.",
+    "wrongReasons": [
+      "Rounding down would miss the required maximum margin of error.",
+      "Correct.",
+      "This is roughly the unsquared ratio; solving for n requires squaring it.",
+      "Halving the required sample size would make the margin too large."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slide 7 (sample-size formula derived from the margin of error)",
+    "difficulty": "stretch",
+    "kind": "original"
+  },
+  {
+    "id": "a15",
+    "topic": "mean-ci",
+    "prompt": "A two-sided 98% t confidence interval uses n = 18 observations. Which Excel function gives the positive t critical value?",
+    "options": [
+      "=T.INV.2T(0.01,17)",
+      "=T.INV.2T(0.02,18)",
+      "=T.INV.2T(0.02,17)",
+      "=T.INV(0.02,17)"
+    ],
+    "answer": 2,
+    "explanation": "For 98% confidence, α = 1−0.98 = 0.02. T.INV.2T takes the TOTAL two-tail probability α, not α/2, and df = n−1 = 17. It returns the positive critical magnitude.",
+    "wrongReasons": [
+      "T.INV.2T already splits the total probability across both tails; do not halve α again.",
+      "One-sample t uses n−1 degrees of freedom, not n.",
+      "Correct.",
+      "T.INV is a left-tail inverse; this call returns a negative lower-tail value, not the requested positive two-tail critical value."
+    ],
+    "source": "Module2_CI_Sigma Known and Unknown, slide 10; Practice Exam 2, question 14",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a16",
+    "topic": "proportion-ci",
+    "prompt": "A survey of 300 students finds that 120 use a particular study app. What is the point estimate of the population proportion who use the app?",
+    "options": [
+      "120",
+      "300",
+      "0.60",
+      "0.40"
+    ],
+    "answer": 3,
+    "explanation": "The sample proportion is p̂ = successes/n = 120/300 = 0.40. It estimates the population proportion p. The remaining 0.60 is the proportion who do not use the app.",
+    "wrongReasons": [
+      "120 is the success count, not the proportion.",
+      "300 is the sample size, not the proportion.",
+      "0.60 is the proportion of nonusers.",
+      "Correct."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slides 7 and 9",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a17",
+    "topic": "proportion-ci",
+    "prompt": "In a random sample of 300 students, 120 use a study app. Using z* = 1.645, what is the approximate 90% confidence interval for the population proportion of app users?",
+    "options": [
+      "(0.353, 0.447)",
+      "(0.344, 0.456)",
+      "(0.598, 0.602)",
+      "(0.399, 0.401)"
+    ],
+    "answer": 0,
+    "explanation": "p̂ = 120/300 = 0.40. Estimated SE = √[0.40×0.60/300] = 0.028284. The margin is 1.645×0.028284 = 0.046528, giving (0.35347, 0.44653), or (0.353, 0.447) to three decimals.",
+    "wrongReasons": [
+      "Correct.",
+      "This uses z* = 1.96, which corresponds to 95% confidence.",
+      "This is centered on the nonuser proportion and is far too narrow.",
+      "This divides p̂(1−p̂) by n without taking the square root before constructing the margin."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slides 7–10",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a18",
+    "topic": "proportion-ci",
+    "prompt": "A random sample has 1 success and 49 failures. Which statement best describes a usual normal-approximation (Wald) confidence interval for the population proportion?",
+    "options": [
+      "It is automatically reliable because n = 50 exceeds 30.",
+      "Its normal approximation is questionable because there are too few successes.",
+      "It must use the t distribution with df = 49.",
+      "It is invalid because sample proportions can never be below 0.05."
+    ],
+    "answer": 1,
+    "explanation": "Proportion inference needs enough observations of BOTH outcomes for a good normal approximation. The course’s two-proportion slides check for at least 5 successes and 5 failures in each sample; more conservative guidelines use 10. One success fails either check. The n ≈ 30 rule of thumb for averages is not the relevant success/failure check. Alternative proportion intervals are available outside this course formula.",
+    "wrongReasons": [
+      "A moderate total n does not guarantee a good normal approximation when one outcome is rare.",
+      "Correct.",
+      "The t procedure is for inference about means with unknown σ, not a standard proportion interval.",
+      "There is no universal lower bound of 0.05 on sample proportions."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slide 7; Chi Square Test of Independence, slides 23 and 28 (normal-approximation conditions)",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a19",
+    "topic": "proportion-ci",
+    "prompt": "For a one-proportion confidence interval when the true proportion is unknown, which estimated standard error is used?",
+    "options": [
+      "√[p₀(1−p₀)/n]",
+      "p̂(1−p̂)/n",
+      "√[p̂(1−p̂)/n]",
+      "s/√n"
+    ],
+    "answer": 2,
+    "explanation": "For a usual one-proportion confidence interval, estimate the unknown p with p̂: SE = √[p̂(1−p̂)/n]. A hypothesized p₀ is used in the standard error of a null-based one-proportion z test, not this CI.",
+    "wrongReasons": [
+      "This is the null-based SE for a usual one-proportion z test, not the plug-in CI SE.",
+      "This is the estimated variance of p̂; take its square root to get SE.",
+      "Correct.",
+      "This is an estimated SE for a sample mean rather than the usual binary-proportion formula."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slide 7",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a20",
+    "topic": "proportion-ci",
+    "prompt": "Two independent random samples estimate app usage. Group 1 has 120 users out of 200 people; group 2 has 180 users out of 400. For a 95% confidence interval for p₁−p₂, use z* = 1.96. What is the approximate interval?",
+    "options": [
+      "(−0.084, 0.084)",
+      "(0.108, 0.192)",
+      "(0.066, 0.834)",
+      "(0.066, 0.234)"
+    ],
+    "answer": 3,
+    "explanation": "p̂₁ = 0.60, p̂₂ = 0.45, so the estimated difference is 0.15. For this CI, use the UNPOOLED SE = √[0.60×0.40/200 + 0.45×0.55/400] = 0.042647. Thus 0.15 ± 1.96×0.042647 = (0.0664, 0.2336). Separate sample estimates are used; a pooled estimate is associated with testing H₀: p₁ = p₂.",
+    "wrongReasons": [
+      "The interval must be centered on the observed difference 0.15, not the null difference 0.",
+      "This treats about one SE as the margin and omits the 1.96 multiplier.",
+      "A difference CI is centered at 0.15; this proposed upper endpoint is not symmetric about that estimate.",
+      "Correct."
+    ],
+    "source": "Chi Square Test of Independence, slides 27–28; Module2_Confidence Intervals for Proportions, slide 11",
+    "difficulty": "stretch",
+    "kind": "original"
+  },
+  {
+    "id": "a21",
+    "topic": "proportion-ci",
+    "prompt": "Two separately calculated 95% confidence intervals for two population proportions overlap. Which conclusion is justified from overlap alone?",
+    "options": [
+      "Overlap alone does not determine whether a direct test of the difference would be significant.",
+      "The two population proportions are proven equal.",
+      "A direct two-sided test of their difference must have p > 0.05.",
+      "The higher sample proportion must represent the higher population proportion."
+    ],
+    "answer": 0,
+    "explanation": "Nonoverlapping intervals can support a difference, as the slide notes. But the reverse is not guaranteed: overlapping separate 95% CIs can still accompany a significant direct comparison. Use a confidence interval for p₁−p₂ or the appropriate hypothesis test.",
+    "wrongReasons": [
+      "Correct.",
+      "Failure to separate individual intervals does not prove equality.",
+      "The uncertainty of a difference differs from simply checking overlap; significance is still possible.",
+      "Sampling variability means sample ordering alone does not establish population ordering."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slides 11–13",
+    "difficulty": "stretch",
+    "kind": "original"
+  },
+  {
+    "id": "a22",
+    "topic": "proportion-ci",
+    "prompt": "A 95% confidence interval for p₁−p₂ is (0.04, 0.19). What is the best interpretation?",
+    "options": [
+      "Population 1 has between 4 and 19 times as many successes as population 2.",
+      "We are 95% confident that population 1’s success proportion exceeds population 2’s by 4 to 19 percentage points.",
+      "The proportions could be equal because each individual sample proportion is unknown.",
+      "95% of individuals in population 1 have success probabilities between 0.04 and 0.19."
+    ],
+    "answer": 1,
+    "explanation": "This is an interval for a DIFFERENCE of proportions. Values 0.04 to 0.19 mean 4 to 19 percentage points. The entire interval is positive, so 0 is excluded and the data support p₁ > p₂ at the corresponding two-sided level.",
+    "wrongReasons": [
+      "A difference of proportions is not a ratio or a multiplicative comparison.",
+      "Correct.",
+      "Equality corresponds to a difference of zero, which the interval excludes.",
+      "The interval concerns a population-level difference, not individual-level probabilities."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slides 11–12",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a23",
+    "topic": "proportion-ci",
+    "prompt": "For planning a survey, use p = 0.50 as the conservative estimate of the unknown proportion. You want a 95% margin of error no larger than 0.04. With z* = 1.96, what is the minimum whole-number sample size?",
+    "options": [
+      "600",
+      "49",
+      "601",
+      "2401"
+    ],
+    "answer": 2,
+    "explanation": "Rearrange E = z*√[p(1−p)/n] to n ≥ (z*/E)²p(1−p). Here n ≥ (1.96/0.04)²×0.25 = 600.25. Round UP to 601. p = 0.50 is conservative because p(1−p) is largest there.",
+    "wrongReasons": [
+      "600 is below 600.25, so it narrowly misses the stated maximum margin.",
+      "This is z*/E without squaring and multiplying by p(1−p).",
+      "Correct.",
+      "This omits the p(1−p) = 0.25 factor."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slide 7 (sample-size formula derived from the margin of error)",
+    "difficulty": "stretch",
+    "kind": "original"
+  },
+  {
+    "id": "a24",
+    "topic": "proportion-ci",
+    "prompt": "A 95% confidence interval for a population proportion is (0.46, 0.57). For a matching two-sided test of H₀: p = 0.50 at α = 0.05 using the same inferential method, what is the correct conclusion?",
+    "options": [
+      "Reject H₀ because 0.50 is close to the interval’s center.",
+      "Accept H₀ as proven true.",
+      "Reject H₀ because the upper endpoint exceeds 0.50.",
+      "Fail to reject H₀; the data do not establish a difference from 0.50 at this level."
+    ],
+    "answer": 3,
+    "explanation": "The null value 0.50 lies inside the 95% interval. With a matching interval/test construction, this corresponds to failing to reject a two-sided test at α = 0.05. It does not establish that p is exactly 0.50. The matching-method condition matters because some approximate interval and test formulas use different SEs.",
+    "wrongReasons": [
+      "A value near the interval’s center is compatible with the data rather than a reason to reject it.",
+      "Failing to reject is not proof that the null is true.",
+      "One endpoint above 0.50 does not imply the entire interval excludes it.",
+      "Correct."
+    ],
+    "source": "Module2_Confidence Intervals for Proportions, slide 12",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a25",
+    "topic": "proportion-ci",
+    "prompt": "Two independent samples contain 30 successes out of 50 observations and 60 successes out of 150 observations. For a z test of H₀: p₁ = p₂, what is the pooled estimate of the common success proportion?",
+    "options": [
+      "0.45",
+      "0.50",
+      "0.60",
+      "0.40"
+    ],
+    "answer": 0,
+    "explanation": "Pool the success COUNTS and sample sizes: p̂pool = (x₁+x₂)/(n₁+n₂) = (30+60)/(50+150) = 90/200 = 0.45. This is a sample-size-weighted average, not a simple average of 0.60 and 0.40. Pooling is justified by the null hypothesis of equal population proportions.",
+    "wrongReasons": [
+      "Correct.",
+      "0.50 is the unweighted average of the two sample proportions; their sample sizes differ.",
+      "0.60 is only the first sample proportion and ignores the second sample.",
+      "0.40 is only the second sample proportion and ignores the first sample."
+    ],
+    "source": "Chi Square Test of Independence, slides 24–25",
+    "difficulty": "core",
+    "kind": "original"
+  },
+  {
+    "id": "a26",
+    "topic": "proportion-ci",
+    "prompt": "Group 1 has 60 successes in 100 observations and group 2 has 36 successes in 90 observations. The independent random samples satisfy the normal-approximation conditions. Test H₀: p₁ = p₂ versus Hₐ: p₁ ≠ p₂ at α = 0.01. The two-sided z critical value is 2.576. Which statistic and decision are correct?",
+    "options": [
+      "z ≈ 0.20; fail to reject H₀",
+      "z ≈ 2.75; reject H₀",
+      "z ≈ 2.75; fail to reject H₀",
+      "z ≈ 1.96; reject H₀"
+    ],
+    "answer": 1,
+    "explanation": "p̂₁ = 0.60 and p̂₂ = 0.40. Under H₀, p̂pool = 96/190 ≈ 0.50526. SE₀ = √[0.50526×0.49474×(1/100+1/90)] ≈ 0.072644. Thus z = (0.60−0.40)/0.072644 ≈ 2.753. Since |z| > 2.576, reject H₀ at 1%. The two-sided p-value is approximately 0.00590.",
+    "wrongReasons": [
+      "0.20 is only the difference in sample proportions; divide it by its null standard error.",
+      "Correct.",
+      "The computed statistic exceeds the supplied 1% two-sided critical magnitude, so it falls in the rejection region.",
+      "1.96 is a common 5% two-sided critical value, not the statistic computed from these data; α is 0.01 here."
+    ],
+    "source": "Chi Square Test of Independence, slides 23–25; Hypothesis Testing, slides 29–31",
+    "difficulty": "stretch",
+    "kind": "original"
+  }
+]
