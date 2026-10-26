@@ -39,7 +39,9 @@ template = (ROOT / 'study-tool.template.html').read_text()
 marker = '/*__STUDY_DATA__*/'
 assert template.count(marker) == 1, 'Missing or duplicate data marker'
 serialized = json.dumps(data, ensure_ascii=False).replace('<', '\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')
-(OUT / 'study-tool.html').write_text(template.replace(marker, 'window.STUDY_DATA = ' + serialized + ';'))
+site_html = template.replace(marker, 'window.STUDY_DATA = ' + serialized + ';')
+(OUT / 'study-tool.html').write_text(site_html)
+(ROOT / 'index.html').write_text(site_html)
 
 md = [
     '# Inference Lab — your Exam 2 study guide',

@@ -4,6 +4,14 @@ An offline study tool based on the supplied practice exam and six statistics sli
 
 **[Download the study tool and printable guide](https://github.com/jdiepenbrock/repository/raw/refs/heads/main/dist/inference-lab.zip)**
 
+## Open and share as a website
+
+The website entry point is `index.html` at the repository root. Once GitHub Pages is enabled, open and share:
+
+**https://jdiepenbrock.github.io/repository/**
+
+One-time owner setup: open [GitHub Pages settings](https://github.com/jdiepenbrock/repository/settings/pages), select **Deploy from a branch**, choose **main** and **/(root)**, then **Save**. GitHub may take a few minutes to publish. Visitors then open the link directly; no ZIP, installation, or GitHub account is needed for this public site. Each person's study progress stays in their own browser.
+
 ## Use it
 
 Download and unzip the study bundle, then open `study-tool.html` in a modern browser. If you are using the source checkout instead, open `dist/study-tool.html`. It is a single self-contained file: you can copy it to another computer. Study progress is stored in this browser when local storage is available; private browsing, clearing browser data, or moving to another browser may reset it. The tool still works if storage is blocked.
@@ -20,7 +28,7 @@ From this checkout, run:
 python3 build.py
 ```
 
-The build uses Python's standard library, validates all data, embeds it into `study-tool.template.html`, and generates self-contained files in `dist`. Development can use the existing isolated checkout; no separate Git worktree is needed.
+The build uses Python's standard library, validates all data, embeds it into `study-tool.template.html`, and generates self-contained files in `dist` plus the root `index.html` for the website. Development can use the existing isolated checkout; no separate Git worktree is needed.
 
 Source content is in `content/*.json`. See `SOURCE_NOTES.md` for source coverage, course conventions, and corrected slide mistakes. No official answer key was supplied; worked answers were independently verified. Original practice questions are clearly distinguished from supplied questions.
 
